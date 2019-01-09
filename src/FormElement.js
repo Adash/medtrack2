@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 
 class FormElement extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            name: '',
-            type: '',
-            repetitions: '',
-        }
-
+    state = {
+        name: '',
+        type: '',
+        repetitions: '',
     }
 
     handleNewValueChange = (event) => {
@@ -67,10 +63,11 @@ class FormElement extends Component {
                             onChange={this.handleNewValueChange}
                         />
                     </div>
-                    <button className='btn btn-success'
+                    <input type="button" value="Add Meditation" className='btn btn-success'
                         onClick={ this.handleSubmit }
-                    > Add Meditation </button>
+                    /> 
                 </form>
+
             </div>    
         );
     }
@@ -78,4 +75,3 @@ class FormElement extends Component {
 
 export default FormElement;
 
-//onClick={ ()=>this.props.handleFormSubmit(name, type, repetitions) }

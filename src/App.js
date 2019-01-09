@@ -77,47 +77,24 @@ class App extends Component {
     });
   }
 
-  //handleFormSubmit(name, type, repetitions) {
-    handleFormSubmits() {
+    handleFormSubmit(input) {
+    const repetitions = parseInt(input.repetitions, 10)
     const newMeditation = {
-      meditationName: 'name',
-      meditationType: 'type',
-      repetitions: 'repetitions',
+      meditationName: input.name,
+      meditationType: input.type,
+      repetitions: repetitions,
       newRepValue: 0,
     }
-    //const medKey = name.replace(/\s+/g, '').toLowerCase();
-    const medKey = 'test'
+
+    let medKey = input.name.replace(/\s+/g, '').toLowerCase();
+    if ( !(isNaN(medKey.charAt(0))) ) { medKey = 'a' + medKey };
+    console.log(this.state.meditations[medKey]);
     const medClone = Object.assign({ [medKey]:{} }, this.state.meditations);
     medClone[medKey] = newMeditation;   
 
     this.setState({
       meditations: medClone,
     }); 
-  }
-
-  handleFormSubmit() {
-    this.setState({
-      meditations: {
-        sixteenthKarmapa: {
-          meditationName: '16th Karmapa',
-          meditationType: 'GuruYoga',
-          repetitions: 108,
-          newRepValue: 3,
-        },
-        limitlessLight: {
-          meditationName: 'Limitless Light',
-          meditationType: 'Yidam Practice',
-          repetitions: 1080,
-          newRepValue: 9,
-        },
-        eightKarmapa: {
-          meditationName: '8th Karmapa',
-          meditationType: 'GY',
-          repetitions: 108093702,
-          newRepValue: 108,
-        },
-      },
-    })
   }
 
   componentDidMount() {
@@ -152,13 +129,14 @@ class App extends Component {
           <DisplayHistory
             history={ history }
             removeLine={ this.removeHistoryItem }
+            test={this.handleFormSubmit}
           />
           <div className="form section">
             <FormElement
               handleFormSubmit={ this.handleFormSubmit }
             />
           </div>
-          <footer className="footer"> ... </footer>
+          <footer className="footer"> ...  </footer>
       </div>
     );
   }

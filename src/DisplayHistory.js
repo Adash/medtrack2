@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class DisplayHistory extends Component {
     
-
     render() {
         const history = this.props.history.map((value, entryNo) => {
             const repetitions = value.repetitions;

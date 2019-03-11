@@ -13,7 +13,6 @@ class MeditationTrackerBox extends Component {
 
     }
 
-
     handleSubmit(key){
       //  const newValue = parseInt(this.state.newRepValue, 10);
 
@@ -27,9 +26,6 @@ class MeditationTrackerBox extends Component {
     }
     
     render() {
-       // const meditationsBlock;
-       // const{ meditationName, meditationType, repetitions, } = this.props.meditations.sixteenthKarmapa;
-
         const meditations = Object.keys(this.props.meditations).map(
             (key)=> {
                 const thisMed = this.props.meditations[key];

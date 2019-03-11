@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import MeditationTrackerBox from './MeditationTrackerBox';
 import DisplayHistory from './DisplayHistory';
 import FormElement from './FormElement';
+import inData from './inData';
 
 class App extends Component {
   constructor(props) {
@@ -16,20 +16,7 @@ class App extends Component {
   }
 
   state = {
-    meditations: {
-      sixteenthKarmapa: {
-        meditationName: '16th Karmapa',
-        meditationType: 'GuruYoga',
-        repetitions: 108,
-        newRepValue: 3,
-      },
-      limitlessLight: {
-        meditationName: 'Limitless Light',
-        meditationType: 'Yidam Practice',
-        repetitions: 1080,
-        newRepValue: 9,
-      },
-    },
+    meditations: inData,
     history: [],
   }
 
@@ -97,26 +84,15 @@ class App extends Component {
     }); 
   }
 
-  componentDidMount() {
-    document.title = 'Adaś';
-  }
-
-
-  componentDidUpdate() {
-    document.title = document.title + '.';
-    //console.log(prevProps);
-    //console.log(this.state.history);
-  }
-
 
   render() {
     const { meditations } = this.state;
     const { history } = this.state
 
     return (
-      <div className="App">
+      <div className="App container">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          
         </header>
         <div className='mainContainer'>
           <MeditationTrackerBox 

@@ -96,6 +96,7 @@ class App extends Component {
         </header>
         <div className='mainContainer'>
           <MeditationTrackerBox 
+            className="medbox"
             meditations= { meditations }  
             addNewValue= { this.addNewValue }
             handleKeyPress= { this.handleKeyPress }
@@ -103,11 +104,12 @@ class App extends Component {
           />
         </div>
           <DisplayHistory
+            className="medlist"
             history={ history }
             removeLine={ this.removeHistoryItem }
             test={this.handleFormSubmit}
           />
-          <div className="form section">
+          <div className="form section medform">
             <FormElement
               handleFormSubmit={ this.handleFormSubmit }
             />

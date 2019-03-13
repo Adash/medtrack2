@@ -2,7 +2,37 @@
   font-family: Helvetica;
 }
 
+.App-header {
+  grid-area: header;
+}
+
+.medbox {
+  grid-area: medbox;
+}
+
+.medlist {
+  grid-area: list;
+}
+
+.medform {
+  grid-area: medform;
+}
+
+.footer {
+  grid-area: footer;
+}
+
 .container {
+  width: 100%;
+  height: 100%;
   display: grid;
+  background: lightgray;
+  grid-template-areas: 
+    "header header header"
+    "medbox list list"
+    "medform . ."
+    "footer footer footer"
+  ;
+  grid-gap: 10px;
 }
 

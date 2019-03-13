@@ -91,30 +91,28 @@ class App extends Component {
 
     return (
       <div className="App container">
-        <header className="App-header">
-          
-        </header>
-        <div className='mainContainer'>
-          <MeditationTrackerBox 
-            className="medbox"
-            meditations= { meditations }  
-            addNewValue= { this.addNewValue }
-            handleKeyPress= { this.handleKeyPress }
-            handleNewValueChange= {this.handleNewValueChange}
+        <header className="header">
+        <h2>MedTrack</h2>
+        </header>        
+        <MeditationTrackerBox 
+          className="medbox"
+          meditations= { meditations }  
+          addNewValue= { this.addNewValue }
+          handleKeyPress= { this.handleKeyPress }
+          handleNewValueChange= {this.handleNewValueChange}
+        />
+        <DisplayHistory
+          className="medlist"
+          history={ history }
+          removeLine={ this.removeHistoryItem }
+          test={this.handleFormSubmit}
+        />
+        <div className="form section medform">
+          <FormElement
+            handleFormSubmit={ this.handleFormSubmit }
           />
         </div>
-          <DisplayHistory
-            className="medlist"
-            history={ history }
-            removeLine={ this.removeHistoryItem }
-            test={this.handleFormSubmit}
-          />
-          <div className="form section medform">
-            <FormElement
-              handleFormSubmit={ this.handleFormSubmit }
-            />
-          </div>
-          <footer className="footer"> ...  </footer>
+        <footer className="footer"> ...  </footer>
       </div>
     );
   }

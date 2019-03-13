@@ -29,10 +29,11 @@ class MeditationTrackerBox extends Component {
         const meditations = Object.keys(this.props.meditations).map(
             (key)=> {
                 const thisMed = this.props.meditations[key];
-
                 return (
-                    <div key={key} className='card text-center' style={{width: 280}}>
-                        <div className='card-body'>
+                        <div 
+                           key={key} 
+                           className='card-body text-center card'
+                           style={{width: 280}}>
                             <h5 className='card-title'> 
                                 { thisMed.meditationName } </h5>
                             <h6 className='card-subtitle mb-2 text-muted'> 
@@ -50,18 +51,13 @@ class MeditationTrackerBox extends Component {
                                         onKeyPress= { (event)=>this.onKeyPress(event, key) }
                                     ></input>
                                 <div className="input-group-append">
-                                        <button className='btn btn-outline-primary'
-                                            onClick={ ()=> this.props.addNewValue(key) }
-                                            > add mantras 
-                                        </button>
+                                    <button className='btn btn-outline-primary'
+                                        onClick={ ()=> this.props.addNewValue(key) }
+                                        > add mantras 
+                                    </button>
                                 </div>
                             </div>
-
-                            <button className='btn btn-success'
-                                onClick={ ()=>this.handleSubmit(key) }
-                                > alter imp </button>
                         </div>
-                    </div>
                 )
             }            
         );

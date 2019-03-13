@@ -2,7 +2,14 @@
   font-family: Helvetica;
 }
 
-.App-header {
+.header {
+  font-family:futura;
+  height: 50px;
+  background-color: rgb(10, 73, 150);
+  color: lightblue;
+  width: 100%;
+  z-index: 4;
+  padding: 5px;
   grid-area: header;
 }
 
@@ -26,7 +33,8 @@
   width: 100%;
   height: 100%;
   display: grid;
-  background: lightgray;
+  background: #C9D9EF;
+  padding: 0px;
   grid-template-areas: 
     "header header header"
     "medbox list list"

@@ -3,9 +3,8 @@
 }
 
 .header {
-  grid-area: header;
+  grid-area: hd;
   font-family:futura;
-  height: 50px;
   background-color: rgb(10, 73, 150);
   color: lightblue;
   width: 100%;
@@ -14,29 +13,34 @@
 }
 
 .medbox {
-  grid-area: medbox;
+  grid-area: mb;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 200px 200px;
   grid-gap: 5px;
-  justify-items: center;
+  padding: 5px;
+  justify-items: right;
 }
 
 .medlist {
-  grid-area: list;
+  grid-area: li;
+  width: 90%;
+  padding: 10px;
   background-color: #38AECC;
+  border-radius: 7px;
 }
 
 .medform {
-  grid-area: medform;
+  grid-area: mf;
   padding: 10px;
+  width: 97%;
   background-color: #D6E9FF;
+  border-radius: 7px;
 }
 
 .footer {
-  grid-area: footer;
+  grid-area: ft;
   font-family:futura;
-  height: 50px;
   background-color: rgb(10, 73, 150);
   color: lightblue;
   width: 100%;
@@ -46,7 +50,7 @@
 
 .medcard {
   background-color: #A0AEBF;
-  width: 280px;
+  width: 100%;
 }
 
 .container {
@@ -55,12 +59,19 @@
   display: grid;
   background: #C9D9EF;
   padding: 0px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 40px auto 350px 50px;
   grid-template-areas: 
-    "header header"
-    "medbox list"
-    "medform . "
-    "footer footer"
+    "hd hd hd hd hd hd hd hd hd hd hd hd"
+    "mb mb mb mb mb li li li li li li li"
+    "mf mf mf mf . . . . . . . . "
+    "ft ft ft ft ft ft ft ft ft ft ft ft"
   ;
   grid-gap: 10px;
+  justify-items: center;
 }
+
+
+/* additional stuff to be exported */
+
 

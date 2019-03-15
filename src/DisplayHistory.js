@@ -14,7 +14,7 @@ class DisplayHistory extends Component {
           <td>{ meditationName }</td>
           <td>{ date }</td>
           <td><button 
-            className='btn btn-danger'
+            className='btn btn-sm btn-light'
             onClick={ ()=> this.props.removeLine( entryNo ) }
           > remove 
           </button>
@@ -30,6 +30,7 @@ class DisplayHistory extends Component {
             <th scope='col'>Repetitions</th>
             <th scope='col'>Meditation</th>
             <th scope='col'>Completed On</th>
+            <th scope='col'></th>
           </tr>
       </thead>
       <tbody>{ history }</tbody>

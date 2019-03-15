@@ -28,7 +28,7 @@ class App extends Component {
     const date = new Date();
     const time = date.toDateString();
     const medName = this.state.meditations[medKey].meditationName;
-
+    
     medClone[medKey].repetitions += newValue;  
 
     this.setState({
@@ -95,7 +95,6 @@ class App extends Component {
         <h2>MedTrack</h2>
         </header>        
         <MeditationTrackerBox 
-          className="medbox"
           meditations= { meditations }  
           addNewValue= { this.addNewValue }
           handleKeyPress= { this.handleKeyPress }
@@ -107,11 +106,9 @@ class App extends Component {
           removeLine={ this.removeHistoryItem }
           test={this.handleFormSubmit}
         />
-        <div className="form section medform">
-          <FormElement
-            handleFormSubmit={ this.handleFormSubmit }
-          />
-        </div>
+        <FormElement
+          handleFormSubmit={ this.handleFormSubmit }
+        />
         <footer className="footer"> ...  </footer>
       </div>
     );

@@ -3,6 +3,7 @@
 }
 
 .header {
+  grid-area: header;
   font-family:futura;
   height: 50px;
   background-color: rgb(10, 73, 150);
@@ -10,7 +11,6 @@
   width: 100%;
   z-index: 4;
   padding: 5px;
-  grid-area: header;
 }
 
 .medbox {
@@ -35,6 +35,13 @@
 
 .footer {
   grid-area: footer;
+  font-family:futura;
+  height: 50px;
+  background-color: rgb(10, 73, 150);
+  color: lightblue;
+  width: 100%;
+  z-index: 4;
+  padding: 5px;
 }
 
 .medcard {

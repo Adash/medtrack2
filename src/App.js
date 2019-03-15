@@ -108,7 +108,7 @@ class App extends Component {
         <FormElement
           handleFormSubmit={ this.handleFormSubmit }
         />
-        <footer className="footer"> ...  </footer>
+        <footer className="footer"> Footer  </footer>
       </div>
     );
   }

@@ -106,7 +106,7 @@ class App extends Component {
           class="btn btn-success"
           onClick={ this.toggleForm }  
         >
-          Add Meditation
+          { this.state.showForm ? "Hide": "Show" } Form
         </button>
         </header>        
         <MeditationTrackerBox 

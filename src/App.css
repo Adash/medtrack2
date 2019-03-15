@@ -15,32 +15,44 @@
 
 .medbox {
   grid-area: medbox;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  grid-gap: 5px;
+  justify-items: center;
 }
 
 .medlist {
   grid-area: list;
+  background-color: #38AECC;
 }
 
 .medform {
   grid-area: medform;
   padding: 10px;
+  background-color: #D6E9FF;
 }
 
 .footer {
   grid-area: footer;
 }
 
+.medcard {
+  background-color: #A0AEBF;
+  width: 280px;
+}
+
 .container {
   width: 100%;
   height: 100%;
-
+  display: grid;
   background: #C9D9EF;
   padding: 0px;
   grid-template-areas: 
-    "header header header"
-    "medbox list list"
-    "medform . ."
-    "footer footer footer"
+    "header header"
+    "medbox list"
+    "medform . "
+    "footer footer"
   ;
   grid-gap: 10px;
 }

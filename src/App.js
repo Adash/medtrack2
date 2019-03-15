@@ -101,7 +101,6 @@ class App extends Component {
           handleNewValueChange= {this.handleNewValueChange}
         />
         <DisplayHistory
-          className="medlist"
           history={ history }
           removeLine={ this.removeHistoryItem }
           test={this.handleFormSubmit}

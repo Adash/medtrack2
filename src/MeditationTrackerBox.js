@@ -31,8 +31,8 @@ class MeditationTrackerBox extends Component {
         return (
           <div 
             key={key} 
-            className='card-body text-center card'
-            style={{width: 280}}>
+            className='card-body text-center card medcard'
+          >
             <h5 className='card-title'> 
               { thisMed.meditationName } </h5>
             <h6 className='card-subtitle mb-2 text-muted'> 

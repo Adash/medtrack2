@@ -37,7 +37,7 @@ class MeditationTrackerBox extends Component {
               { thisMed.meditationName } </h5>
             <h6 className='card-subtitle mb-2 text-muted'> 
               { this.props.meditations[key].meditationType } </h6>
-            <p className='card-text' style={{color: 'green'}}> 
+            <p className='card-text' > 
               { this.props.meditations[key].repetitions } </p>
             
             <div className="input-group mb-3">

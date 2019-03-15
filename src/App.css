@@ -36,6 +36,7 @@
   width: 97%;
   background-color: #D6E9FF;
   border-radius: 7px;
+  z-index: 9;
 }
 
 .footer {

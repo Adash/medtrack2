@@ -13,6 +13,7 @@ class App extends Component {
     this.handleNewValueChange = this.handleNewValueChange.bind(this);
     this.removeHistoryItem = this.removeHistoryItem.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.toggleForm = this.toggleForm.bind(this);
   }
 
   state = {
@@ -50,6 +51,7 @@ class App extends Component {
 
       this.setState({
           meditations: medClone, 
+          showForm: false,
       });
     }  
   }
@@ -64,7 +66,7 @@ class App extends Component {
     });
   }
 
-    handleFormSubmit(input) {
+  handleFormSubmit(input) {
     const repetitions = parseInt(input.repetitions, 10)
     const newMeditation = {
       meditationName: input.name,
@@ -84,6 +86,12 @@ class App extends Component {
     }); 
   }
 
+  toggleForm() {
+    this.setState({
+      showForm: !this.state.showForm
+    })
+  }
+
 
   render() {
     const { meditations } = this.state;
@@ -93,6 +101,13 @@ class App extends Component {
       <div className="App container">
         <header className="header">
         <h2>MedTrack</h2>
+        <button 
+          type="button" 
+          class="btn btn-success"
+          onClick={ this.toggleForm }  
+        >
+          Add Meditation
+        </button>
         </header>        
         <MeditationTrackerBox 
           meditations= { meditations }  
@@ -105,9 +120,12 @@ class App extends Component {
           removeLine={ this.removeHistoryItem }
           test={this.handleFormSubmit}
         />
-        <FormElement
-          handleFormSubmit={ this.handleFormSubmit }
-        />
+        { this.state.showForm ?
+          <FormElement
+            handleFormSubmit={ this.handleFormSubmit }
+          />
+          : null
+        }
         <footer className="footer"> Footer  </footer>
       </div>
     );

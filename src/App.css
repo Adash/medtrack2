@@ -5,18 +5,24 @@
 .header {
   grid-area: hd;
   font-family:futura;
-  background-color: rgb(10, 73, 150);
-  color: lightblue;
+  background-color: #2765B2;
+  color: #DEEBF9; 
   width: 100%;
   z-index: 4;
-  padding: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 34px;
+  grid-template-areas: "lg lg . . . . . . . . nvbt .";
+  justify-items: center;
 }
 
 .medbox {
   grid-area: mb;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 200px 200px;
+  grid-template-rows: repeat(auto-fill, 200px);
   grid-gap: 5px;
   padding: 5px;
   justify-items: right;
@@ -26,46 +32,56 @@
   grid-area: li;
   width: 90%;
   padding: 10px;
-  background-color: #38AECC;
+  /* background-color: #38AECC; */
   border-radius: 7px;
 }
 
 .medform {
-  grid-area: mf;
   padding: 10px;
   width: 97%;
-  background-color: #D6E9FF;
+  background-color: #2765B2; 
+  color: #DEEBF9;
   border-radius: 7px;
+  /* related to popping up */
   z-index: 9;
+  position: fixed;
+  width: 230px;
+  height: 325px;
+  top: 46px;
+  right: -844px;
+  left: 0;
+
+  margin: auto;
 }
 
 .footer {
   grid-area: ft;
   font-family:futura;
-  background-color: rgb(10, 73, 150);
-  color: lightblue;
+  background-color: #2765B2; 
+  color: lightblue; 
   width: 100%;
   z-index: 4;
   padding: 5px;
 }
 
 .medcard {
-  background-color: #A0AEBF;
+  background-color: #C7DEF9;
   width: 100%;
 }
 
 .container {
   width: 100%;
   height: 100%;
+  min-height: 800px;
   display: grid;
-  background: #C9D9EF;
+  /* background: #C9D9EF; */
+  background-color: #DEEBF9;
   padding: 0px;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 40px auto 350px 50px;
+  grid-template-rows: 40px auto 50px;
   grid-template-areas: 
     "hd hd hd hd hd hd hd hd hd hd hd hd"
     "mb mb mb mb mb li li li li li li li"
-    "mf mf mf mf . . . . . . . . "
     "ft ft ft ft ft ft ft ft ft ft ft ft"
   ;
   grid-gap: 10px;
@@ -75,4 +91,12 @@
 
 /* additional stuff to be exported */
 
+/* header stuff */
 
+.navbutton {
+  grid-area: nvbt;
+}
+
+.logo {
+  grid-area: lg;
+}

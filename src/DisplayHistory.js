@@ -14,7 +14,7 @@ class DisplayHistory extends Component {
           <td>{ meditationName }</td>
           <td>{ date }</td>
           <td><button 
-            className='btn btn-sm btn-light'
+            className='btn btn-sm btn-outline-danger'
             onClick={ ()=> this.props.removeLine( entryNo ) }
           > remove 
           </button>

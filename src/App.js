@@ -100,10 +100,10 @@ class App extends Component {
     return (
       <div className="App container">
         <header className="header">
-        <h2>MedTrack</h2>
+        <h2 className="logo">MedTrack</h2>
         <button 
           type="button" 
-          class="btn btn-success"
+          className="btn btn-outline-light btn-sm navbutton"
           onClick={ this.toggleForm }  
         >
           { this.state.showForm ? "Hide": "Show" } Form

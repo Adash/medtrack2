@@ -39,6 +39,7 @@ class App extends Component {
             name: medName,
             repetitions: newValue,
             date: time,
+            medKey: medKey,
           }])
     });
   }
@@ -56,12 +57,20 @@ class App extends Component {
     }  
   }
 
-  removeHistoryItem(entryNo) {
+  removeHistoryItem(entryNo, medKey, repetitions) {
     const newHistory = this.state.history.filter(
       (value, index)=> index !== entryNo
     );
     console.log(newHistory);
+
+    //try to take this bit out to separte function and change it 
+    // in a way that it can be also called from addNewValue function
+
+    const medClone = Object.assign({}, this.state.meditations);
+    medClone[medKey].repetitions -= repetitions;  
+
     this.setState({
+      meditations: medClone,
       history: newHistory
     });
   }

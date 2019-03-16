@@ -4,18 +4,16 @@ class DisplayHistory extends Component {
     
   render() {
     const history = this.props.history.map((value, entryNo) => {
-      const repetitions = value.repetitions;
-      const meditationName = value.name; 
-      const date = value.date;
+      const { repetitions, name, date, medKey } = value;
 
       return (
         <tr key={ entryNo }>
           <td>{ repetitions }</td> 
-          <td>{ meditationName }</td>
+          <td>{ name }</td>
           <td>{ date }</td>
           <td><button 
             className='btn btn-sm btn-outline-danger'
-            onClick={ ()=> this.props.removeLine( entryNo ) }
+            onClick={ ()=> this.props.removeLine( entryNo, medKey, repetitions ) }
           > remove 
           </button>
           </td>

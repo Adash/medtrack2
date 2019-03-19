@@ -34,6 +34,7 @@
   padding: 10px;
   /* background-color: #38AECC; */
   border-radius: 7px;
+  align-self: start;
 }
 
 .medform {
